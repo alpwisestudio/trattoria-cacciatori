@@ -37,7 +37,7 @@ const isSunday = (iso: string) => new Date(`${iso}T12:00:00`).getDay() === 0;
 
 const SubmitNote = () => (
     <p className="text-xs text-ink/65">
-        La richiesta arriva su WhatsApp e ti rispondiamo in mattinata. Oppure chiama il{" "}
+        La richiesta arriva su WhatsApp e ti rispondiamo per confermare. Oppure chiama il{" "}
         <a href={INFO.phoneHref} className="font-bold text-vino underline underline-offset-2">
             {INFO.phone}
         </a>
@@ -50,7 +50,7 @@ const WaIcon = () => (
     </svg>
 );
 
-/** Prenotazione del pranzo: solo dal lunedì al sabato, 12:00-14:00. */
+/** Prenotazione del pranzo, dal lunedì al sabato. Fasce orarie da confermare con il locale. */
 export function BookingForm() {
     const [dateError, setDateError] = useState("");
     // Calcolata dopo il montaggio: niente date nel prerender
@@ -108,6 +108,7 @@ export function BookingForm() {
                         <option key={s}>{s}</option>
                     ))}
                 </select>
+                <span className="mt-1 block text-xs text-ink/60">[Fasce orarie da confermare]</span>
             </label>
             <label>
                 <Label required>Persone</Label>
@@ -120,8 +121,8 @@ export function BookingForm() {
             </label>
             <label>
                 <Label required>Menù</Label>
-                <select name="menu" required className={field} defaultValue="Menù del giorno">
-                    <option>Menù del giorno</option>
+                <select name="menu" required className={field} defaultValue="Menù fisso">
+                    <option>Menù fisso</option>
                     <option>Alla carta</option>
                     <option>Ancora non so</option>
                 </select>
@@ -134,7 +135,7 @@ export function BookingForm() {
             </label>
             <label className="sm:col-span-2">
                 <Label>Note</Label>
-                <textarea name="notes" rows={3} placeholder="Allergie, seggiolone, abbiamo poco tempo…" className={`${field} resize-none`} />
+                <textarea name="notes" rows={3} placeholder="Allergie, esigenze particolari, abbiamo poco tempo…" className={`${field} resize-none`} />
             </label>
             <div className="flex flex-col items-start gap-3 pt-1 sm:col-span-2">
                 <button type="submit" className="btn btn-wa">
@@ -192,7 +193,7 @@ export function CompanyForm() {
             </fieldset>
             <label className="sm:col-span-2">
                 <Label>Note</Label>
-                <textarea name="notes" rows={3} placeholder="Orari dei turni, buoni pasto, esigenze particolari…" className={`${field} resize-none`} />
+                <textarea name="notes" rows={3} placeholder="Orari dei turni, esigenze particolari…" className={`${field} resize-none`} />
             </label>
             <div className="flex flex-col items-start gap-3 pt-1 sm:col-span-2">
                 <button type="submit" className="btn btn-wa">

@@ -7,7 +7,7 @@ import tagliatelle from "../../public/images/tagliatelle.jpg";
 export const metadata: Metadata = {
     title: "Contatti e prenotazioni",
     description:
-        "Prenota il pranzo alla Trattoria Cacciatori, Via Giusti 96, Somma Lombardo. Aperti dal lunedì al sabato, 7:30-14:30. Telefono e WhatsApp 350 977 9099.",
+        "Prenota il pranzo alla Trattoria Cacciatori, Via Giusti 96, Somma Lombardo. Aperti dal lunedì al sabato, 7:30-14:30. Telefono 350 977 9099.",
 };
 
 export default function ContattiPage() {
@@ -16,7 +16,7 @@ export default function ContattiPage() {
             <PageHero
                 script="Contatti"
                 title="Ti aspettiamo a pranzo"
-                text="Prenota online, scrivici su WhatsApp o chiamaci. Dal lunedì al sabato, dalle 7:30 alle 14:30."
+                text="Prenota online o chiamaci. Dal lunedì al sabato, dalle 7:30 alle 14:30."
                 image={tagliatelle}
                 alt="Tagliatelle al ragù"
             />
@@ -29,7 +29,7 @@ export default function ContattiPage() {
                         <div data-reveal className="rounded-xl border border-line bg-card p-8">
                             <h3 className="text-sm font-bold text-rubino">Orari</h3>
                             <HoursList className="mt-4 text-sm" />
-                            <p className="mt-4 text-xs text-muted">La cucina serve il pranzo dalle 12:00 alle 14:30.</p>
+                            <p className="mt-4 text-xs text-muted">Orari della cucina: [da confermare].</p>
                         </div>
                     </div>
                     <MapEmbed />

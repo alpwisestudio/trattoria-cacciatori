@@ -56,8 +56,8 @@ export function WorkMenus() {
                         <ul
                             className={`mt-5 flex-1 space-y-2.5 border-t pt-5 text-sm ${m.highlight ? "border-white/15 text-rosa" : "border-line text-muted"}`}
                         >
-                            {m.items.map((it) => (
-                                <li key={it} className="flex gap-2.5">
+                            {m.items.map((it, j) => (
+                                <li key={j} className="flex gap-2.5">
                                     <CheckCircleIcon
                                         aria-hidden
                                         size={18}
@@ -82,11 +82,10 @@ export function BookingSection() {
                     <p className="script text-2xl text-oro md:text-[1.75rem]">Il posto te lo teniamo noi</p>
                     <h2 className="mt-1 font-serif text-4xl font-semibold leading-tight md:text-5xl">Prenota il pranzo</h2>
                     <p className="mt-4 leading-relaxed text-rosa">
-                        Giorno, orario e quante persone: la richiesta ci arriva su WhatsApp e ti confermiamo in mattinata. Tra
-                        le 12:30 e le 13:30 la sala è piena, meglio prenotare.
+                        Giorno, orario e quante persone: la richiesta ci arriva su WhatsApp e ti rispondiamo per confermare.
                     </p>
                     <ul className="mt-6 space-y-2.5 text-sm">
-                        {["Conferma su WhatsApp", "Anche per gruppi e aziende", "Dalle 12:00 alle 14:00"].map((t) => (
+                        {["Richiesta su WhatsApp", "Dal lunedì al sabato", "[Orari del pranzo da confermare]"].map((t) => (
                             <li key={t} className="flex items-center gap-2.5">
                                 <CheckCircleIcon aria-hidden size={20} className="text-oro" />
                                 {t}
@@ -109,7 +108,7 @@ export function BookingSection() {
 export function ContactCard() {
     const rows = [
         { label: "Indirizzo", value: `${INFO.street}, ${INFO.zip} ${INFO.city} (${INFO.province})` },
-        { label: "Telefono e WhatsApp", value: INFO.phone, href: INFO.phoneHref },
+        { label: "Telefono", value: INFO.phone, href: INFO.phoneHref },
         { label: "Email", value: INFO.email, href: `mailto:${INFO.email}` },
     ];
     return (

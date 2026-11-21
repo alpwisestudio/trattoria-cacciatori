@@ -12,7 +12,7 @@ export function HoursList({ className = "", compact }: { className?: string; com
                 </div>
                 <div className="flex justify-between gap-6">
                     <dt>Cucina</dt>
-                    <dd className="whitespace-nowrap">12:00-14:30</dd>
+                    <dd className="whitespace-nowrap">[da confermare]</dd>
                 </div>
                 <div className="flex justify-between gap-6">
                     <dt>Domenica</dt>
@@ -67,9 +67,6 @@ export function SiteFooter() {
                         <a href={INFO.phoneHref} className="mt-2 whitespace-nowrap font-serif text-2xl font-semibold hover:text-oro xl:text-3xl">
                             {INFO.phone}
                         </a>
-                        <a href={`https://wa.me/${INFO.whatsapp}`} className="text-sm text-rosa hover:text-oro">
-                            Anche su WhatsApp
-                        </a>
                         <Link href="/contatti#prenota" className="btn btn-oro mt-4">
                             Prenota il pranzo
                         </Link>
@@ -85,7 +82,7 @@ export function SiteFooter() {
                         </a>
                         <span>© {INFO.fullName}</span>
                     </div>
-                    <span>Allergeni disponibili in sala. Accessibile in sedia a rotelle.</span>
+                    <span>Allergeni: chiedi al personale.</span>
                 </div>
 
                 {/* Dicitura del concept */}
@@ -95,7 +92,7 @@ export function SiteFooter() {
                         <a href="https://www.alpwise.studio" className="underline underline-offset-2 hover:text-rosa">
                             Alpwise Studio
                         </a>
-                        . Non è il sito ufficiale della Trattoria Cacciatori. Piatti e prezzi sono di esempio.
+                        . Non è il sito ufficiale della Trattoria Cacciatori. I testi tra parentesi quadre e i prezzi XX sono da confermare con il locale.
                     </p>
                     <p>
                         Foto illustrative via Wikimedia Commons: ossobuco con risotto e cotoletta, pier (CC BY-SA 4.0); risotto

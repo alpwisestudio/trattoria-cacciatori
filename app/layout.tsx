@@ -25,11 +25,11 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
     title: {
-        default: "Trattoria Cacciatori Somma Lombardo | Menù del giorno vicino a Malpensa",
+        default: "Trattoria Cacciatori Somma Lombardo | Pranzo vicino a Malpensa",
         template: "%s | Trattoria Cacciatori Somma Lombardo",
     },
     description:
-        "Trattoria Cacciatori a Somma Lombardo (VA), Via Giusti 96, a pochi minuti da Malpensa: cucina lombarda, menù del giorno a € 14 e pranzi di lavoro dal lunedì al sabato. Bar e colazioni dalle 7:30. Prenota su WhatsApp.",
+        "Trattoria Cacciatori a Somma Lombardo (VA), Via Giusti 96, vicino a Malpensa. Aperti dal lunedì al sabato, dalle 7:30 alle 14:30. Telefono 350 977 9099.",
     // Concept dimostrativo: non deve finire nei motori di ricerca.
     robots: { index: false, follow: false },
 };

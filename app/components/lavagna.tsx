@@ -75,7 +75,7 @@ export function Lavagna() {
             </div>
 
             <div className="vino flex flex-col justify-center p-6 text-white sm:p-9">
-                <p className="text-sm font-bold text-oro">Menù completo</p>
+                <p className="text-sm font-bold text-oro">Menù fisso</p>
                 <p className="mt-1 font-serif text-6xl font-bold">{DAILY_PRICE}</p>
                 <p className="mt-3 text-sm leading-relaxed text-rosa">{DAILY_INCLUDES}</p>
             </div>

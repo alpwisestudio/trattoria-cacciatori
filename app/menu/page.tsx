@@ -10,7 +10,7 @@ import polenta from "../../public/images/polenta.jpg";
 export const metadata: Metadata = {
     title: "Menù",
     description:
-        "Il menù della Trattoria Cacciatori a Somma Lombardo: menù del giorno a € 14, risotto alla milanese, cotoletta, ossobuco, brasato con polenta, dolci fatti in casa e bar dalle 7:30.",
+        "Il menù della Trattoria Cacciatori a Somma Lombardo: menù fisso a pranzo e piatti della casa.",
 };
 
 export default function MenuPage() {
@@ -18,19 +18,19 @@ export default function MenuPage() {
         <>
             <PageHero
                 script="Il menù"
-                title="Dal menù del giorno alla carta"
-                text="Il menù del giorno cambia ogni mattina. La carta segue le stagioni lombarde."
+                title="Cosa si mangia da noi"
+                text="[Come funzionano il menù fisso e la carta: da confermare]"
                 image={polenta}
-                alt="Cotechino con polenta e lenticchie"
+                alt="Foto illustrativa: cotechino con polenta e lenticchie"
             />
             <section className="px-6 pt-24">
-                <Heading script="Menù del giorno" title="Primo, secondo e caffè a € 14" />
+                <Heading script="A pranzo" title="Il menù fisso" text="[Prezzo e cosa comprende: da confermare]" />
                 <div data-reveal="zoom" style={delay(1)} className="mx-auto mt-12 max-w-4xl">
                     <Lavagna />
                 </div>
             </section>
             <section className="pt-24">
-                <Heading script="Alla carta" title="Tutti i piatti" text="Tocca una categoria per vedere solo quella." />
+                <Heading script="Alla carta" title="Tutti i piatti" text="[Piatti e prezzi da confermare] Tocca una categoria per vedere solo quella." />
                 <div className="mt-10">
                     <Suspense fallback={<MenuFilterFallback />}>
                         <MenuFilter />
@@ -38,10 +38,9 @@ export default function MenuPage() {
                 </div>
             </section>
             <p className="mx-auto max-w-xl px-6 text-center text-xs leading-relaxed text-muted">
-                Per allergie e intolleranze chiedi la tabella degli allergeni al personale. Alcuni prodotti possono essere
-                surgelati all&apos;origine o abbattuti a norma di legge.
+                Per allergie e intolleranze chiedi la tabella degli allergeni al personale.
             </p>
-            <CtaBand title="Hai già scelto?" text="Prenota il tavolo per pranzo o passa direttamente: se c'è posto, ti sediamo subito." />
+            <CtaBand title="Hai già scelto?" text="Prenota il tavolo per pranzo o chiamaci." />
         </>
     );
 }
