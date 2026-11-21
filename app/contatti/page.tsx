@@ -23,7 +23,7 @@ export default function ContattiPage() {
             <BookingSection />
             <section className="px-6 pb-24">
                 <Heading script="Dove siamo" title="Via Giusti 96, Somma Lombardo" />
-                <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-[1fr_1.4fr]">
+                <div className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-[1fr_1.4fr]">
                     <div className="space-y-6">
                         <ContactCard />
                         <div data-reveal className="rounded-xl border border-line bg-card p-8">

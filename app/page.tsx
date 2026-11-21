@@ -201,7 +201,7 @@ export default function Home() {
                     title="Via Giusti 96, Somma Lombardo"
                     text="Vicino all'aeroporto di Malpensa. La domenica siamo chiusi."
                 />
-                <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-[1fr_1.4fr]">
+                <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-[1fr_1.4fr]">
                     <ContactCard />
                     <MapEmbed />
                 </div>
