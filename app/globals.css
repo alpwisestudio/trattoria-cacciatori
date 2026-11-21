@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+/* Palette R1, bordeaux e oro: vino per i fondi scuri, oro per azioni e accenti sul vino,
+   rubino per gli accenti leggibili sul fondo chiaro. */
+:root {
+  --vino: #5a1621;
+  --vino-deep: #3d0e16;
+  --crema: #f7f3f0; /* fondo della pagina */
+  --card: #fefbfa;
+  --sabbia: #f8e6c8; /* fondo delle icone */
+  --line: #eadcdc;
+  --ink: #2a1418;
+  --muted: #6c5a5d;
+  --oro: #f0c987; /* accento sul vino, testo sopra sempre vino-deep */
+  --rubino: #9e2a35; /* accento leggibile sul chiaro */
+  --rosa: #ecd5d7; /* testo secondario sul vino */
+  --wa: #1f7a45;
+}
+
+@theme inline {
+  --color-vino: var(--vino);
+  --color-vino-deep: var(--vino-deep);
+  --color-crema: var(--crema);
+  --color-card: var(--card);
+  --color-sabbia: var(--sabbia);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-oro: var(--oro);
+  --color-rubino: var(--rubino);
+  --color-rosa: var(--rosa);
+  --color-wa: var(--wa);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-playfair);
+  --font-hand: var(--font-caveat);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: var(--crema);
+  color: var(--ink);
+  /* Playfair ha numeri in stile antico: prezzi e orari vanno allineati */
+  font-variant-numeric: lining-nums;
+}
+
+::selection {
+  background: var(--oro);
+  color: var(--vino-deep);
+}
+
+.vino {
+  background-color: var(--vino);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 6px;
+  padding: 0.95rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.15s, filter 0.15s, background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+@media (max-width: 639px) {
+  .btn:not(.btn-compact) {
+    width: 100%;
+  }
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--oro);
+  outline-offset: 3px;
+}
+.btn-oro {
+  background: var(--oro);
+  color: var(--vino-deep);
+}
+.btn-oro:hover {
+  filter: brightness(1.06);
+}
+.btn-vino {
+  background: var(--vino);
+  color: #fff;
+}
+.btn-vino:hover {
+  background: var(--vino-deep);
+}
+.btn-vino:focus-visible,
+.btn-line-dark:focus-visible {
+  outline-color: var(--vino);
+}
+.btn-line {
+  box-shadow: inset 0 0 0 1.5px rgb(247 243 240 / 0.55);
+  color: #fff;
+}
+.btn-line:hover {
+  background: rgb(255 255 255 / 0.08);
+}
+.btn-line-dark {
+  box-shadow: inset 0 0 0 1.5px var(--vino);
+  color: var(--vino);
+}
+.btn-line-dark:hover {
+  background: rgb(90 22 33 / 0.06);
+}
+.btn-wa {
+  background: var(--wa);
+  color: #fff;
+}
+.btn-wa:hover {
+  filter: brightness(1.08);
+}
+
+/* Riga in corsivo a mano sopra i titoli */
+.script {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+/* Piccola etichetta, usata con parsimonia */
+.kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+}
+
+/* ---------- Animazioni ---------- */
+
+@theme {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-page-in: page-in 0.7s var(--ease-out-expo) backwards;
+  --animate-menu-in: menu-in 0.35s ease-out;
+  --animate-ken-burns: ken-burns 18s ease-out both;
+  --animate-stamp: stamp 0.9s var(--ease-out-expo) 0.1s both;
+
+  @keyframes page-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+  @keyframes ken-burns {
+    from {
+      transform: scale(1.12);
+    }
+  }
+  @keyframes stamp {
+    from {
+      opacity: 0;
+      transform: scale(1.4) rotate(-14deg);
+    }
+  }
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+      filter: blur(10px);
+    }
+  }
+}
+
+.hero-in {
+  animation: hero-in 1.1s var(--ease-out-expo) both;
+  animation-delay: calc(var(--d, 0) * 120ms + 150ms);
+}
+
+@media (scripting: enabled) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(32px);
+    filter: blur(6px);
+    transition:
+      opacity 0.9s var(--ease-out-expo),
+      transform 0.9s var(--ease-out-expo),
+      filter 0.9s var(--ease-out-expo);
+    transition-delay: calc(var(--d, 0) * 90ms);
+  }
+  [data-reveal="left"] {
+    transform: translateX(-48px);
+  }
+  [data-reveal="right"] {
+    transform: translateX(48px);
+  }
+  [data-reveal="zoom"] {
+    transform: scale(0.94);
+  }
+  [data-reveal][data-shown] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
