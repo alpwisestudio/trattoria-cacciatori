@@ -50,10 +50,6 @@ export function PageHero({
 }) {
     return (
         <section className="vino relative overflow-hidden px-6 pb-20 pt-32 text-white md:pb-24 md:pt-40">
-            <div
-                aria-hidden
-                className="absolute -right-24 top-24 hidden h-[26rem] w-[26rem] rounded-full bg-oro md:block lg:right-[-2rem]"
-            />
             <div className="relative mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.2fr_1fr]">
                 <div>
                     <p className="hero-in script text-2xl text-oro md:text-3xl">{script}</p>
@@ -66,11 +62,11 @@ export function PageHero({
                         </p>
                     )}
                 </div>
-                <div
-                    style={delay(2)}
-                    className="hero-in relative mx-auto hidden aspect-square w-full max-w-sm overflow-hidden rounded-full border-[10px] border-vino-deep shadow-[0_30px_60px_-20px_rgb(30_4_8/0.7)] md:block"
-                >
-                    <Image src={image} alt={alt} fill priority placeholder="blur" sizes="384px" className="object-cover" />
+                <div style={delay(2)} className="hero-in relative mx-auto hidden aspect-square w-full max-w-sm md:block">
+                    <div aria-hidden className="absolute inset-0 translate-x-[9%] translate-y-[9%] rounded-full bg-oro" />
+                    <div className="relative aspect-square overflow-hidden rounded-full border-[10px] border-vino-deep shadow-[0_30px_60px_-20px_rgb(30_4_8/0.7)]">
+                        <Image src={image} alt={alt} fill priority placeholder="blur" sizes="384px" className="object-cover" />
+                    </div>
                 </div>
             </div>
         </section>

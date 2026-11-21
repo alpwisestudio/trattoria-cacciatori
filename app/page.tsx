@@ -74,8 +74,8 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div style={delay(2)} className="hero-in relative mx-auto aspect-square w-full max-w-[19rem] sm:max-w-sm md:max-w-none">
-                        <div aria-hidden className="absolute -right-[12%] top-[10%] aspect-square w-[105%] rounded-full bg-oro" />
+                    <div style={delay(2)} className="hero-in relative mx-auto aspect-square w-[88%] max-w-[19rem] sm:max-w-sm md:w-[90%] md:max-w-md">
+                        <div aria-hidden className="absolute inset-0 translate-x-[9%] translate-y-[9%] rounded-full bg-oro" />
                         <div className="relative aspect-square overflow-hidden rounded-full border-[10px] border-vino-deep shadow-[0_30px_60px_-20px_rgb(30_4_8/0.7)]">
                             <Image
                                 src={ossobuco}
